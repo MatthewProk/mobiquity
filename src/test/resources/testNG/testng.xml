@@ -8,9 +8,9 @@
                 <include name="implemented"/>
             </run>
         </groups>
-        <packages>
-            <package name="api" />
-        </packages>
+        <classes>
+            <class name="api.MQ_0000_01_CorrectEmailInsidePostComments" />
+        </classes>
     </test>
 
 </suite>
