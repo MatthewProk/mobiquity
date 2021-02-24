@@ -12,8 +12,18 @@ import java.util.List;
 
 import static org.testng.Assert.fail;
 
-public class UserRequests extends APIRequestUtils {
+public class UsersRequests extends APIRequestUtils {
 
+    /**
+     * This method:
+     * 1. gets user by his username specified in parameters through API request
+     * 2. check status code is 200
+     * 3. converts received json to real list of java class objects (users objects)
+     * 4. check there is only one user with specified username
+     *
+     * @param userName - username of specified user
+     * @return received user
+     */
     public static User getUsersByUserName(String userName) {
         Response response = RestAssured
                 .given()

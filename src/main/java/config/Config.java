@@ -26,6 +26,11 @@ public class Config {
         }
     }
 
+    /**
+     * This method gets value of "url" from resources and returns it as a string
+     *
+     * @return value of url
+     */
     public static String getBaseUrl() {
         return prop.getProperty("url");
     }
