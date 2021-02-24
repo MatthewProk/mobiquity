@@ -3,7 +3,7 @@ package checkers;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 
-public class ResponseStatusCheck {
+public class ResponseStatusChecker {
 
     /**
      * This method checks that a request is completed with 'status code = 200'

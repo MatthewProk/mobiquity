@@ -1,8 +1,6 @@
 package models;
 
 import com.google.gson.annotations.SerializedName;
-import org.apache.xpath.operations.String;
-
 
 public class User {
 

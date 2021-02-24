@@ -10,7 +10,7 @@ import requests.APIRequestUtils;
 
 import java.util.List;
 
-import static checkers.ResponseStatusCheck.checkResponseStatusCodeIsOK;
+import static checkers.ResponseStatusChecker.checkResponseStatusCodeIsOK;
 
 public class PostsRequests extends APIRequestUtils {
 

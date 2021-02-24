@@ -1,7 +1,5 @@
 package models;
 
-import org.apache.xpath.operations.String;
-
 public class Comment {
 
     private final int postId;
