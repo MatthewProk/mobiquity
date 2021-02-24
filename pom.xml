@@ -99,6 +99,7 @@
                         <testFailureIgnore>false</testFailureIgnore>
                         <argLine>
                             -Xmx1024m -XX:MaxPermSize=256m
+                            -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${env.JENKINS_HOME}/logs
                             -Dtestng.dtd.http=true
                             -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                         </argLine>
