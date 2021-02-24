@@ -46,7 +46,6 @@ public class MQ_0000_01_CorrectEmailInsidePostComments {
     @Title("Post Comments Emails property format ")
     @Test(groups = {IMPLEMENTED})
     public void mq_test_0000_01() {
-//        checkUserPostsCommentsEmailsHavePropertyFormat(DELPHINE.getUserName());
-        Assert.assertTrue(true);
+        checkUserPostsCommentsEmailsHavePropertyFormat(DELPHINE.getUserName());
     }
 }
