@@ -7,6 +7,7 @@ import io.restassured.response.Response;
 import models.Comment;
 import models.Post;
 import requests.APIRequestUtils;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class CommentsRequests extends APIRequestUtils {
      * @param post - user post object
      * @return list of comments objects related to post specified in method parameters
      */
+    @Step
     public static List<Comment> getCommentsByPost(Post post) {
         Response response = RestAssured
                 .given()

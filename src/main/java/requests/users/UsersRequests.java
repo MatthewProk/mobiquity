@@ -6,6 +6,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import models.User;
 import requests.APIRequestUtils;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class UsersRequests extends APIRequestUtils {
      * @param userName - username of specified user
      * @return received user
      */
+    @Step
     public static User getUsersByUserName(String userName) {
         Response response = RestAssured
                 .given()

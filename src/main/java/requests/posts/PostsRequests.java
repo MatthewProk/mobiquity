@@ -7,6 +7,7 @@ import io.restassured.response.Response;
 import models.Post;
 import models.User;
 import requests.APIRequestUtils;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class PostsRequests extends APIRequestUtils {
      * @param user - user object
      * @return list of posts objects related to user specified in method parameters
      */
+    @Step
     public static List<Post> getPostsByUsers(User user) {
         Response response = RestAssured
                 .given()

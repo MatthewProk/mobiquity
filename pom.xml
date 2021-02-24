@@ -80,7 +80,7 @@
     </dependencies>
 
     <build>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+        <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -98,9 +98,7 @@
                     <configuration>
                         <testFailureIgnore>false</testFailureIgnore>
                         <argLine>
-<!--                            -Xmx4g-->
-                            -XX:+HeapDumpOnOutOfMemoryError
-                            -XX:HeapDumpPath=${env.JENKINS_HOME}/logs
+                            -Xmx1024m -XX:MaxPermSize=256m
                             -Dtestng.dtd.http=true
                             -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                         </argLine>

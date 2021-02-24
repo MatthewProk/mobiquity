@@ -5,6 +5,7 @@ import models.Post;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.asserts.SoftAssert;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class CommentChecker {
      *
      * @param userName of specified user
      */
+    @Step
     public static void checkUserPostsCommentsEmailsHavePropertyFormat(String userName) {
 
         // SoftAssert is more suitable in this case then typical Assert because
