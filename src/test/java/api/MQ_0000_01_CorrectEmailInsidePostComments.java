@@ -6,10 +6,12 @@ import ru.yandex.qatools.allure.annotations.Title;
 
 import static checkers.CommentChecker.checkUserPostsCommentsEmailsHavePropertyFormat;
 import static models.User.UserEnum.DELPHINE;
+import static testutils.TestGroups.IMPLEMENTED;
+
+// In my case I am used to creating 1 class for 1 test but in general it depends on team decision
 
 /**
  * This class is test class which checks correct email format in post comments.
- * 1 class = 1 test
  * MQ_0000_01:
  * 1. MQ - name of project
  * 2. 0000 - number of story
@@ -41,7 +43,7 @@ public class MQ_0000_01_CorrectEmailInsidePostComments {
             "Get all comments related to received posts using postId through API request '/comments'" +
             "Check all emails inside received comments have property format")
     @Title("Post Comments Emails property format ")
-    @Test
+    @Test(groups = {IMPLEMENTED})
     public void mq_test_0000_01() {
         checkUserPostsCommentsEmailsHavePropertyFormat(DELPHINE.getUserName());
     }
