@@ -100,7 +100,6 @@
                         <testFailureIgnore>false</testFailureIgnore>
                         <forkMode>once</forkMode>
                         <argLine>
-                            -Dfile.encoding=UTF-8
                             -Dtestng.dtd.http=true
                             -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                         </argLine>
