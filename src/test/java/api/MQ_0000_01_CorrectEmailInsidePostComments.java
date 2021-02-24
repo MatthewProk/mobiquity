@@ -1,9 +1,11 @@
 package api;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Title;
+
+import static checkers.CommentChecker.checkUserPostsCommentsEmailsHavePropertyFormat;
+import static models.User.UserEnum.DELPHINE;
 
 /**
  * This class is test class which checks correct email format in post comments.
@@ -16,7 +18,7 @@ import ru.yandex.qatools.allure.annotations.Title;
 public class MQ_0000_01_CorrectEmailInsidePostComments {
 
     // I think all things related to how we need to make out our tests are discussed by the team.
-    // I did this way because it convenient for me in this time but in general
+    // I chose this way because it is convenient for me in this moment but in general
     // I would make decisions related to it with team
 
     // I know about "Given When Then", but I enjoy another style (see @Description)
@@ -41,5 +43,6 @@ public class MQ_0000_01_CorrectEmailInsidePostComments {
     @Title("Post Comments Emails property format ")
     @Test
     public void mq_test_0000_01() {
+        checkUserPostsCommentsEmailsHavePropertyFormat(DELPHINE.getUserName());
     }
 }

@@ -28,10 +28,13 @@ public class UsersRequests extends APIRequestUtils {
                 .given()
                 .contentType(ContentType.JSON)
                 .get(GET_USERS_REQUEST + "?username=" + userName);
-        List<User> userFromJSON = GSON.fromJson(response.getBody().asString(), new TypeToken<List<User>>(){}.getType());
-        if(userFromJSON.size() > 1){
+        List<User> userFromJSON = GSON.fromJson(response.getBody().asString(), new TypeToken<List<User>>() {
+        }.getType());
+        if (userFromJSON.size() > 1) {
             fail("There is trouble with DataBase. Username is unique attribute but this method found " + userFromJSON.size()
                     + " users using this username!!! Check DataBase!!!");
+        } else if (userFromJSON.isEmpty()) {
+            fail("User with username = " + userName + " is absent!");
         }
         return userFromJSON.get(0);
     }

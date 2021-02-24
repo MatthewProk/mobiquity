@@ -106,5 +106,20 @@ public class User {
             }
         }
     }
+
+    public enum UserEnum{
+        DELPHINE("Delphine"),
+        ANTONETTE("Antonette");
+
+        private final String userName;
+
+        UserEnum(String userName) {
+            this.userName = userName;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+    }
 }
 
