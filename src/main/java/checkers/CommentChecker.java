@@ -22,6 +22,15 @@ public class CommentChecker {
     private static final String EMAIL_VALIDATION = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+↵\n" +
             ")*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
 
+    /**
+     * This method:
+     * 1. gets user by username
+     * 2. gets all posts related to received user
+     * 3. gets all comments related to received posts
+     * 4. check all emails inside received comments have property format
+     *
+     * @param userName of specified user
+     */
     public static void checkUserPostsCommentsEmailsHavePropertyFormat(String userName) {
 
         // SoftAssert is more suitable in this case then typical Assert because
