@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Title;
 
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 import static testutils.TestGroups.IMPLEMENTED;
 
