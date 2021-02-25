@@ -1,6 +1,5 @@
 package api;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Title;
@@ -45,7 +44,7 @@ public class MQ_0000_01_CorrectEmailInsidePostComments {
             "Check all emails inside received comments have property format")
     @Title("Post Comments Emails property format ")
     @Test(groups = {IMPLEMENTED})
-    public void mq_test_0000_01() {
+    public void MQ_test_0000_01_MG() {
         checkUserPostsCommentsEmailsHavePropertyFormat(DELPHINE.getUserName());
     }
 }

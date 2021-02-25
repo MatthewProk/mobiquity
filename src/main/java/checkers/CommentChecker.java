@@ -13,6 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static java.util.regex.Pattern.compile;
+import static org.testng.Assert.assertTrue;
 import static requests.comments.CommentsRequests.getCommentsByPost;
 import static requests.posts.PostsRequests.getPostsByUsers;
 import static requests.users.UsersRequests.getUsersByUserName;
@@ -59,6 +60,33 @@ public class CommentChecker {
             Matcher matcher = pattern.matcher(comment.getEmail());
             softAssert.assertTrue(matcher.matches(), "Email " + comment.getEmail() + " is not valid!");
         });
+        softAssert.assertAll();
+    }
+
+    /**
+     * This method:
+     * 1. gets user by username
+     * 2. gets all posts related to received user
+     * 3. checks there are no empty post titles
+     *
+     * @param userName of specified user
+     */
+    @Step
+    public static void checkAllPostsOfUserDoesNotHaveEmptyTitle(String userName) {
+
+        SoftAssert softAssert = new SoftAssert();
+
+        // Get posts of user with specified username
+        List<Post> posts = getPostsByUsers(getUsersByUserName(userName));
+        if (posts.isEmpty()) {
+            LOGGER.info("There are no posts with Empty title in post comments, because user " + userName + " does not have posts!");
+        }
+
+        // check that posts titles contain at least 1 character
+        posts.forEach(post -> {
+            softAssert.assertTrue(post.getTitle().trim().length() > 0, "Post with 'id = " + post.getId() + " has empty title");
+        });
+
         softAssert.assertAll();
     }
 }
