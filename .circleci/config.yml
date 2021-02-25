@@ -1,0 +1,46 @@
+version: 2.1
+
+orbs:
+  maven: circleci/maven@1.1
+jobs:
+  api_test:
+    docker:
+      - image: circleci/python:3.6.6-stretch-node-browsers
+    parallelism: 2
+    working_directory: ~/workspace
+    steps:
+      - checkout
+      - run:
+          name: Install Java
+          command: |
+            sudo apt-get update
+            sudo apt-get install openjdk-8-jdk
+          when: always
+      - run:
+          name: Install Maven
+          command: |
+            sudo apt-get update
+            sudo apt-get install maven
+      - run:
+          name: Clean
+          command: mvn clean
+          when: always
+      - run:
+          name: Install
+          command: mvn install
+          when: always
+      - run:
+          name: Generate allure report
+          command: |
+            sudo npm install -g allure-commandline
+            allure generate target/allure-results -o /home/circleci/repo/allurt-result
+          when: always
+      - store_artifacts:
+          path: /home/circleci/repo/allurt-result
+
+workflows:
+  version: 2
+  api_test:
+    jobs:
+      - api_test
+
